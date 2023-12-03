@@ -1,0 +1,18 @@
+Q-2 : Write a python program to make Categorical values in numeric format for a given 
+dataset
+
+Ans -> 
+
+import pandas as pd
+
+df = pd.read_csv("Data.csv")
+
+print(df)
+
+import LabelEncoder
+
+le = LabelEncoder()
+
+label = le.fit_transform(df['Purchased'])
+
+Label
