@@ -1,18 +1,24 @@
-Q-2 : Write a python program to make Categorical values in numeric format for a given 
-dataset
+Q. 2 Write a python program to make Categorical values in numeric format for a given 
+ dataset
 
-Ans -> 
+Ans ->
 
 import pandas as pd
 
-df = pd.read_csv("Data.csv")
+# Sample dataset (replace this with your dataset)
+data = {'Category': ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C'],
+        'Value': [10, 20, 15, 25, 30, 22, 18, 35, 28]}
 
+df = pd.DataFrame(data)
+
+# Display the original dataset
+print("Original Dataset:")
 print(df)
 
-import LabelEncoder
+# Convert categorical values to numeric using Label Encoding
+category_mapping = {'A': 1, 'B': 2, 'C': 3}
+df['Category'] = df['Category'].map(category_mapping)
 
-le = LabelEncoder()
-
-label = le.fit_transform(df['Purchased'])
-
-Label
+# Display the dataset after converting categorical values to numeric
+print("\nDataset After Categorical to Numeric Conversion:")
+print(df)
